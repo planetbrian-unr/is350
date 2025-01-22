@@ -1,2 +1,2 @@
-# is350
-c# source code files for is 350 assignments
+# IS 350 - Business Systems Development
+This repository contains the C# source code files for class assignments and project stages.
