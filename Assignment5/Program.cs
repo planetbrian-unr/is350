@@ -29,7 +29,8 @@ if(!int.TryParse(Console.ReadLine(), out int simulationSelection)) {
 // e. simulation logic
 Random randomChance = new Random();
 switch(simulationSelection) {
-    case 1:     int currentYearCase1 = 1;
+    case 1:     // di. run sim
+                int currentYearCase1 = 1;
                 do {
                     // e. equal chance to increase/decrease
                     bool moneyManipulation = randomChance.Next(2) == 0;
