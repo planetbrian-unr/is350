@@ -10,8 +10,7 @@ Console.WriteLine("What is your name?");
 string userName = Console.ReadLine();
 
 // d. checks if userName variable has a value
-bool isEmptyName = string.IsNullOrEmpty(userName);
-if(isEmptyName) {
+if(string.IsNullOrEmpty(userName)) {
     Console.WriteLine("No name entered. Proceeding anyway...");
 }
 
@@ -48,12 +47,9 @@ switch(operationInput) {
 
 // g. math question
 Console.WriteLine("What is {0} {1} {2}?", num1, operationInput, num2);
-string answerInput = Console.ReadLine();
-int answer = 0;
 
 // gi. check if answerinput is valid
-bool isValidAnswer = int.TryParse(answerInput, out answer);
-if(!isValidAnswer) {
+if(!int.TryParse(Console.ReadLine(), out int answer)) {
     Console.WriteLine("Invalid input! Please enter a whole number.");
     return;
 }
