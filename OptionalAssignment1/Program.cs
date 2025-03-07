@@ -13,7 +13,6 @@ static void rickRoll(string text, int count) {
     }
     else {
         Console.WriteLine("I gave you up");
-
     }
 }
 

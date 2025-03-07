@@ -15,10 +15,10 @@ if(!int.TryParse(Console.ReadLine(), out int money)) {
 }
 
 // d. simulation prompt
-Console.WriteLine("The treasure will have an equal chance to increase/decrease by 25 pieces/year");
+Console.WriteLine("The treasure will have an equal chance to increase/decrease by 25 pieces/month");
 Console.WriteLine("What simulation type do you want to run?");
 Console.WriteLine("(1) Run until treasure amount is 0≤x≤1000");
-Console.WriteLine("(2) Run for a specified # of years");
+Console.WriteLine("(2) Run for a specified # of months");
 
 // g. input and check for non-numeric user input expection
 if(!int.TryParse(Console.ReadLine(), out int simulationSelection)) {
@@ -30,18 +30,13 @@ if(!int.TryParse(Console.ReadLine(), out int simulationSelection)) {
 Random randomChance = new Random();
 switch(simulationSelection) {
     case 1:     // di. run sim
-                int currentYearCase1 = 1;
+                int currentMonthCase1 = 1;
                 do {
                     // e. equal chance to increase/decrease
-                    bool moneyManipulation = randomChance.Next(2) == 0;
-                    if(moneyManipulation) {
-                        money += 25;
-                    }
-                    else {
-                        money -= 25;
-                    }
+                    money += randomChance.Next(2) == 0 ? 25 : -25;
+
                     // f. output year/amount
-                    Console.WriteLine("Year {0}: {1} gold pieces", currentYearCase1++, money);
+                    Console.WriteLine("Year {0}: {1} gold pieces", currentMonthCase1++, money);
                 } while(money >= 0 && money <= 1000);
                 break;
 
@@ -55,17 +50,12 @@ switch(simulationSelection) {
                 }
                 
                 // run sim
-                for(int currentYearCase2 = 1; currentYearCase2 <= years; currentYearCase2++) {
+                for(int currentMonthCase2 = 1; currentMonthCase2 <= years; currentMonthCase2++) {
                     // e. equal chance to increase/decrease
-                    bool moneyManipulation = randomChance.Next(2) == 0;
-                    if(moneyManipulation) {
-                        money += 25;
-                    }
-                    else {
-                        money -= 25;
-                    }
+                    money += randomChance.Next(2) == 0 ? 25 : -25;
+
                     // f. output year/amount
-                    Console.WriteLine("Year {0}: {1} gold pieces", currentYearCase2, money);
+                    Console.WriteLine("Year {0}: {1} gold pieces", currentMonthCase2, money);
                 }
                 break;
 
