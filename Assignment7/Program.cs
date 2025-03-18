@@ -14,33 +14,33 @@ tv2.displayTV();
 // Television class with variables, constructors, and methods
 public class Television {
     // variables
-    private bool onOff;
-    private int volume;
-    private string channel;
-    private double size;
+    bool onOff;
+    int volume;
+    string channel;
+    double size;
 
-    // constructors
+    // constructors, default and parameterized
     public Television() {
-        onOff = false;
-        volume = 5;
-        channel = "KOLO-TV";
-        size = 45;
+        this.onOff = false;
+        this.volume = 5;
+        this.channel = "KOLO-TV";
+        this.size = 45;
     }
-    public Television(bool powerStatus, int volumeLevel, string stationName, double screenSize) {
-        onOff = powerStatus;
-        volume = volumeLevel;
-        channel = stationName;
-        size = screenSize;
+    public Television(bool pwr, int vol, string stn, double scn) {
+        this.onOff = pwr;
+        this.volume = vol;
+        this.channel = stn;
+        this.size = scn;
     }
 
     // methods
     public void displayTV() {
-        if(onOff) {
-            Console.WriteLine("TV of size {0} has volume {1} and is on channel '{2}'.", size, volume, channel);
+        // if true, output stats. otherwise, just have size.
+        if(this.onOff) {
+            Console.WriteLine("TV of size {0} has volume {1} and is on channel '{2}'.", this.size, this.volume, this.channel);
         }
         else {
-            Console.WriteLine("TV of size {0} is off.", size);
+            Console.WriteLine("TV of size {0} is off.", this.size);
         }
     }
 }
-
