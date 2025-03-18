@@ -1,9 +1,7 @@
 ﻿// ppt q1
 try {
     Console.WriteLine("Enter a #");
-    int q1intInput = Convert.ToInt32(Console.ReadLine());
-
-    if(q1intInput < 0) {
+    if(Convert.ToInt32(Console.ReadLine()) < 0) {
         Console.WriteLine("Warning, negative #!");
     }
 }
@@ -103,9 +101,7 @@ Console.WriteLine(compareIntegers(1, 1));
 // doc q5
 try {
     Console.WriteLine("How much would you like to withdraw?");
-    double amount = Convert.ToDouble(Console.ReadLine());
-
-    if(amount < 0) {
+    if(Convert.ToDouble(Console.ReadLine()) < 0) {
         Console.WriteLine("Negative number!");
     }
 }

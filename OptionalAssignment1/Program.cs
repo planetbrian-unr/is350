@@ -19,21 +19,21 @@ static void rickRoll(string text, int count) {
 // 2. evenorodd
 static string evenOrOdd() {
     Console.WriteLine("Enter a whole number");
-    int number = Convert.ToInt32(Console.ReadLine());
-    return number % 2 == 0 ? "Even" : "Odd";
+    return Convert.ToInt32(Console.ReadLine()) % 2 == 0 ? "Even" : "Odd";
 }
 
 // 3. sevenAteNine
 static int sevenAteNine(int num1, int num2, int num3) {
-    if(num1 >= num2 && num1 >= num3) {
-        return num1;
+    int largest = num1;
+
+    if(num2 > largest) {
+        largest = num2;
     }
-    else if(num2 >= num1 && num2 >= num3) {
-        return num2;
+    if(num3 > largest) {
+        largest = num3;
     }
-    else {
-        return num3;
-    }
+
+    return largest;
 }
 
 // main
