@@ -4,32 +4,31 @@
     Gym management
 */
 
-// create gym
+// object creation
 Gym planetfitness = new Gym("Planet Fitness", "Reno", "775-000-0000", true);
-
-// create 2 gym members, and add them to gym
 Member brian = new Member("Brian", 21, 5.75, 175);
 Member john = new Member();
-planetfitness.AddMember(brian);
-planetfitness.AddMember(john);
-planetfitness.OutputInformation();
-
-// create a set of 3 exercises. method demo
 Exercise dash = new Exercise("200m dash", "cardio", 1.5, "hard", 150);
 Exercise biceps = new Exercise("Bicep curls", "muscle building", 20, "medium", 100);
 Exercise nothing = new Exercise();
 
+// add members to gym and output info. 2 of 3 Gym's methods used so far
+planetfitness.AddMember(brian);
+planetfitness.AddMember(john);
+planetfitness.OutputInformation();
+
+// exercise objects methods demo. all 3 used
 dash.OutputInformation();
 Console.WriteLine("doing {0} burns {1} calories", biceps.OutputWorkoutName(), biceps.CalsBurned());
 
+// member objects methods demo. all 4 used
 brian.AddExercise(dash);
 brian.AddExercise(biceps);
 john.AddExercise(nothing);
-
 john.outputInformation();
 Console.WriteLine("{0} has burned {1} calories", brian.OutputName(), brian.CountTotalCalories());
 
-// "close" gym
+// "close" gym. 3 of 3 Gym's methods used.
 planetfitness.ChangeBusinessStatus();
 
 // classes

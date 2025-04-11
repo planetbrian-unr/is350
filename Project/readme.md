@@ -61,4 +61,4 @@ I will create an application for a gym to manage its members by tracking their e
 `ChangeBusinessStatus()`: toggles openForBusiness
 
 ## stage 4
-check `Program.cs`
+check `Program.cs` and `stage4.pdf`
