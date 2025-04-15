@@ -33,8 +33,11 @@ planetfitness.ChangeBusinessStatus();
 
 // classes
 public class Exercise {
+    
     // variables
-    string name ;
+    static int counter = 1;
+    int id;
+    string name;
     string catagory;
     double duration;
     string intensity;
@@ -42,6 +45,7 @@ public class Exercise {
 
     // constructors, default and parameterized
     public Exercise() {
+        id = counter++;
         name = "Nothing";
         catagory = "being lazy";
         duration = 0.0;
@@ -49,6 +53,7 @@ public class Exercise {
         caloriesBurned = 10;
     }
     public Exercise(string nm, string cat, double dur, string inten, int cal) {
+        id = counter++;
         name = nm;
         catagory = cat;
         duration = dur;
@@ -58,7 +63,7 @@ public class Exercise {
 
     // methods
     public void OutputInformation() {
-        Console.WriteLine("{0} ({1}) for {2} minutes at {3} intensity burns {4} calories", name, catagory, duration, intensity, caloriesBurned);
+        Console.WriteLine("{0} {1} ({2}) for {3} minutes at {4} intensity burns {5} calories", id, name, catagory, duration, intensity, caloriesBurned);
     }
     public int CalsBurned() {
         return caloriesBurned;
@@ -70,6 +75,8 @@ public class Exercise {
 
 public class Member {
     // variables
+    static int counter = 1;
+    int id;
     string name ;
     int age;
     double height;
@@ -78,6 +85,7 @@ public class Member {
 
     // constructors, default and parameterized
     public Member() {
+        id = counter++;
         name = "John Doe";
         age = 25;
         height = 5.5;
@@ -85,6 +93,7 @@ public class Member {
         workoutLog = new List<Exercise>();
     }
     public Member(string nm, int ag, double ht, double wt) {
+        id = counter++;
         name = nm;
         age = ag;
         height = ht;
@@ -94,7 +103,7 @@ public class Member {
 
     // methods
     public void outputInformation() {
-        Console.WriteLine("{0} is {1}, {2} feet tall, weighs {3} lbs., and has done these exercises:", name, age, height, weight);
+        Console.WriteLine("{0} {1} is {2}, {3} feet tall, weighs {4} lbs., and has done these exercises:", id, name, age, height, weight);
         foreach(var exercise in workoutLog) {
             Console.WriteLine(exercise.OutputWorkoutName());
         }
@@ -117,7 +126,9 @@ public class Member {
 
 public class Gym {
     // variables
-    string name;
+    static int counter = 1;
+    int id;
+   string name;
     string location;
     string phonenumber;
     bool openForBusiness;
@@ -125,6 +136,7 @@ public class Gym {
 
     // constructors, default and parameterized
     public Gym() {
+        id = counter++;
         name = "No name";
         location = "Nowhere";
         phonenumber = "0000000000";
@@ -132,6 +144,7 @@ public class Gym {
         memberList = new List<Member>();
     }
     public Gym(string nm, string loc, string pnum, bool status) {
+        id = counter++;
         name = nm;
         location = loc;
         phonenumber = pnum;
@@ -141,7 +154,7 @@ public class Gym {
 
     // methods
     public void OutputInformation() {
-        Console.WriteLine("{0} is located at {1}. Their phone # is {2}, and they are {3}. Its members are:", name, location, phonenumber, openForBusiness ? "open" : "closed");
+        Console.WriteLine("{0} {1} is located at {2}. Their phone # is {3}, and they are {4}. Its members are:", id, name, location, phonenumber, openForBusiness ? "open" : "closed");
         foreach(var member in memberList) {
             Console.WriteLine(member.OutputName());
         }    
