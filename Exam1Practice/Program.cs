@@ -17,22 +17,16 @@ double coffeeTotalCost = 0.99 * Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Order cost: {0}", donutTotalCost + coffeeTotalCost);
 
 // ppt q3
-static int rollDie(Random die) {
-    return die.Next(1, 7);
-}
-
-static int rollXDie(int rolls) {
+static int rollXDie(int sides, int rolls) {
     Random die = new Random();
     int sum = 0;
-
-    for(int i = 0; i < rolls; i++) {
-        sum += rollDie(die);
-    }
+    
+    for(int i = 0; i < rolls; i++) sum += die.Next(1, sides + 1);
 
     return sum;
 }
 
-Console.WriteLine(rollXDie(10));
+Console.WriteLine(rollXDie(6, 10));
 
 // ppt q4
 Console.WriteLine("Enter #");
