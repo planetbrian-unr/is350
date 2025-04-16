@@ -1,9 +1,7 @@
 ﻿// ppt q1
 try {
     Console.WriteLine("Enter a #");
-    if(Convert.ToInt32(Console.ReadLine()) < 0) {
-        Console.WriteLine("Warning, negative #!");
-    }
+    if(Convert.ToInt32(Console.ReadLine()) < 0) Console.WriteLine("Warning, negative #!");
 }
 catch {
     Console.WriteLine("Please enter a whole #!");
@@ -19,16 +17,16 @@ double coffeeTotalCost = 0.99 * Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Order cost: {0}", donutTotalCost + coffeeTotalCost);
 
 // ppt q3
-static int rollDie() {
-    Random die = new Random();
+static int rollDie(Random die) {
     return die.Next(1, 7);
 }
 
 static int rollXDie(int rolls) {
+    Random die = new Random();
     int sum = 0;
 
     for(int i = 0; i < rolls; i++) {
-        sum += rollDie();
+        sum += rollDie(die);
     }
 
     return sum;
@@ -41,22 +39,16 @@ Console.WriteLine("Enter #");
 int q4intInput = Convert.ToInt32(Console.ReadLine());
 
 for(int i = 2; i <= 50; i++) {
-    if(q4intInput % i == 0) {
-        Console.WriteLine(i);
-    }
+    if(q4intInput % i == 0) Console.WriteLine(i);
 }
 
 // ppt q5
 static void survivalRate(int value) {
     if(value > 0) {
-        for(int i = value; i >= 0; i--) {
-            Console.WriteLine(i);
-        }
+        for(int i = value; i >= 0; i--) Console.WriteLine(i);
     }
     else if(value < 0) {
-        for(int i = value; i <= 0; i++) {
-            Console.WriteLine(i);
-        }        
+        for(int i = value; i <= 0; i++) Console.WriteLine(i);      
     }
 }
 
@@ -64,9 +56,7 @@ survivalRate(5);
 survivalRate(-5);
 
 // doc q1
-for(int i = 0; i < 500; i++) {
-    Console.WriteLine("We Are Number One");
-}
+for(int i = 0; i < 500; i++) Console.WriteLine("We Are Number One");
 
 // doc q2
 Console.WriteLine("Enter a double value");
@@ -77,21 +67,13 @@ Console.WriteLine(Convert.ToInt32(q2dblInput));
 // doc q3
 int count = 8;
 
-while(count > 0) {
-    Console.WriteLine(count--);
-}
+while(count > 0) Console.WriteLine(count--);
 
 // doc q4
 static int compareIntegers(int num1, int num2) {
-    if(num1 > num2) {
-        return num1;
-    }
-    else if(num2 > num1) {
-        return num2;
-    }
-    else {
-        return -1;
-    }
+    if(num1 > num2) return num1;
+    else if(num2 > num1) return num2;
+    else return -1;
 }
 
 Console.WriteLine(compareIntegers(2, 1));
@@ -101,9 +83,7 @@ Console.WriteLine(compareIntegers(1, 1));
 // doc q5
 try {
     Console.WriteLine("How much would you like to withdraw?");
-    if(Convert.ToDouble(Console.ReadLine()) < 0) {
-        Console.WriteLine("Negative number!");
-    }
+    if(Convert.ToDouble(Console.ReadLine()) < 0) Console.WriteLine("Negative number!");
 }
 catch {
     Console.WriteLine("Non-numeric value!");
@@ -122,20 +102,14 @@ while(true) {
     Console.WriteLine("You guessed {0}", userGuess == generatedNumber ? "correctly" : "incorrectly");
 
     Console.WriteLine("Would you like to continue?");
-    if(Console.ReadLine() == "no") {
-        break;
-    }
-    else {
-        continue;
-    }
+    if(Console.ReadLine() == "no") break;
+    else continue;
 }
 
 // doc q7
 int sum = 0;
 
-for(int i = 1; i <= 1000; i++) {
-    sum += i;
-}
+for(int i = 1; i <= 1000; i++) sum += i;
 
 // doc q8
 Console.WriteLine("Enter an integer");
@@ -146,9 +120,7 @@ Console.WriteLine("Is {0} divisible by 5 or 6? {1}", userInput, (userInput % 5 =
 
 // doc q9
 static void repeater(string text, int times) {
-    for(int i = 0; i < times; i++) {
-        Console.WriteLine(text);
-    }
+    for(int i = 0; i < times; i++) Console.WriteLine(text);
 }
 
 repeater("hi", 5);
@@ -165,9 +137,7 @@ while(true) {
     int height = Convert.ToInt32(Console.ReadLine());
 
     Console.WriteLine("Continue?");
-    if(Console.ReadLine() == "False") {
-        break;
-    }
+    if(Console.ReadLine() == "False")  break;
 
     if(height > tallestHeight) {
         tallestName = name;

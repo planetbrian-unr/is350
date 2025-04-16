@@ -7,9 +7,7 @@
 // 1. rickroll
 static void rickRoll(string text, int count) {
     if(count > 0) {
-        for(int i = 0; i < count; i++) {
-            Console.WriteLine("Never gonna...{0}", text);
-        }
+        for(int i = 0; i < count; i++) Console.WriteLine("Never gonna...{0}", text);
     }
     else {
         Console.WriteLine("I gave you up");
@@ -26,13 +24,8 @@ static string evenOrOdd() {
 static int sevenAteNine(int num1, int num2, int num3) {
     int largest = num1;
 
-    if(num2 > largest) {
-        largest = num2;
-    }
-    if(num3 > largest) {
-        largest = num3;
-    }
-
+    if(num2 > largest) largest = num2;
+    if(num3 > largest) largest = num3;
     return largest;
 }
 

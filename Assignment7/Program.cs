@@ -21,26 +21,26 @@ public class Television {
 
     // constructors, default and parameterized
     public Television() {
-        this.onOff = false;
-        this.volume = 5;
-        this.channel = "KOLO-TV";
-        this.size = 45;
+        onOff = false;
+        volume = 5;
+        channel = "KOLO-TV";
+        size = 45;
     }
     public Television(bool pwr, int vol, string stn, double scn) {
-        this.onOff = pwr;
-        this.volume = vol;
-        this.channel = stn;
-        this.size = scn;
+        onOff = pwr;
+        volume = vol;
+        channel = stn;
+        size = scn;
     }
 
     // methods
     public void displayTV() {
         // if true, output stats. otherwise, just have size.
-        if(this.onOff) {
-            Console.WriteLine("TV of size {0} has volume {1} and is on channel '{2}'.", this.size, this.volume, this.channel);
+        if(onOff) {
+            Console.WriteLine("TV of size {0} has volume {1} and is on channel '{2}'.", size, volume, channel);
         }
         else {
-            Console.WriteLine("TV of size {0} is off.", this.size);
+            Console.WriteLine("TV of size {0} is off.", size);
         }
     }
 }

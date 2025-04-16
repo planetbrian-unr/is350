@@ -11,12 +11,8 @@ while(true) {
     Console.WriteLine("Enter the number of celebrities: ");
 
     // validate if the value is an integer and positive. if so, change bool
-    if(int.TryParse(Console.ReadLine(), out numCelebrities) && numCelebrities > 0) {
-        break;
-    }
-    else {
-        Console.WriteLine("Please enter a positive integer value");
-    }
+    if(int.TryParse(Console.ReadLine(), out numCelebrities) && numCelebrities > 0) break;
+    else Console.WriteLine("Please enter a positive integer value");
 }
 
 // create a string array with the provided number, looping through for names
@@ -41,6 +37,4 @@ for(int i = 0; i < numCelebrities; i++) {
 // followers generator, outputting the content
 Random followerCount = new Random();
 
-foreach(string celebrity in celebrityNames) {
-    Console.WriteLine("{0} has {1} followers", celebrity, followerCount.Next(5000, 500001));
-}
+foreach(string celebrity in celebrityNames) Console.WriteLine("{0} has {1} followers", celebrity, followerCount.Next(5000, 500001));
